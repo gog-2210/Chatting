@@ -19,6 +19,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
+app.use(express.static("public"));
 
 const store = new MongoDBSession({
   uri: process.env.MONGO_URI,
@@ -26,6 +27,10 @@ const store = new MongoDBSession({
   connectionOptions: {
     serverSelectionTimeoutMS: 10000,
   },
+});
+
+app.use("/", (req, res) => {
+  res.send("Green Horny Server is running...");
 });
 app.use(
   session({
