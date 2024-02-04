@@ -110,11 +110,11 @@ router.get(
 router.get(
   "/auth/callback/google",
   passport.authenticate("google", {
-    failureRedirect: "http://localhost:3000/login",
+    failureRedirect: `${process.env.CLIENT_URL}/login`,
   }),
   function (req, res) {
     // Xác thực thành công, chuyển hướng về trang chủ.
-    res.redirect("http://localhost:3000/user?userID=" + req.user._id);
+    res.redirect(`${process.env.CLIENT_URL}/user?userID=` + req.user._id);
   }
 );
 
