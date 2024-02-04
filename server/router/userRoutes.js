@@ -265,7 +265,7 @@ async function sendVerificationEmail(email, verificationCode) {
         <div class="email-container">
             <h1>Xác minh email của bạn</h1>
             <p>Nhấp vào liên kết sau để xác minh email của bạn:</p>
-            <a href="http://localhost:3000/verify?email=${email}&code=${verificationCode}">Xác minh email</a>
+            <a href="${process.env.CLIENT_URL}/verify?email=${email}&code=${verificationCode}">Xác minh email</a>
         </div>
     </body>
     </html>
