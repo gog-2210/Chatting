@@ -19,9 +19,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use("/haha", (req, res) => {
-  res.json({ message: "hello world" });
-});
+
 const store = new MongoDBSession({
   uri: process.env.MONGO_URI,
   collection: "sessions",
