@@ -354,5 +354,13 @@ router.get("/auth/verify", async (req, res) => {
     });
   }
 });
+router.get("/listuser", async (req, res) => {
+  try {
+    const users = await User.find();
+    res.send(users);
+  } catch (error) {
+    res.status(500).send("Lỗi khi lấy danh sách người dùng");
+  }
+});
 
 module.exports = router;

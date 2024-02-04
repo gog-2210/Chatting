@@ -28,10 +28,6 @@ const store = new MongoDBSession({
     serverSelectionTimeoutMS: 10000,
   },
 });
-
-app.use("/", (req, res) => {
-  res.send("Green Horny Server is running...");
-});
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
