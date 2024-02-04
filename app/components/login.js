@@ -123,7 +123,12 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
           />
-          <button type="submit">Sign Up</button>
+          <button
+            className="transition duration-300 ease-in-out hover:bg-transparent hover:text-red-500 hover:border-red-500 mt-4"
+            type="submit"
+          >
+            Sign Up
+          </button>
         </form>
       </div>
       {/* đăng nhập */}
@@ -154,8 +159,13 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
           />
-          <a href="#">Forgot your password?</a>
-          <button type="submit">Sign In</button>
+          <a href="/forgot">Forgot your password?</a>
+          <button
+            className="transition duration-300 ease-in-out hover:bg-transparent hover:text-red-500 hover:border-red-500 mt-4"
+            type="submit"
+          >
+            Sign In
+          </button>
         </form>
       </div>
       {/* chuyển panel */}
