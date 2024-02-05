@@ -110,11 +110,11 @@ router.get(
 router.get(
   "/auth/callback/google",
   passport.authenticate("google", {
-    failureRedirect: `${process.env.CLIENT_URL}/login`,
+    failureRedirect: `/login`,
   }),
   function (req, res) {
     // Xác thực thành công, chuyển hướng về trang chủ.
-    res.redirect(`${process.env.CLIENT_URL}/user?userID=` + req.user._id);
+    res.redirect(`/user?userID=` + req.user._id);
   }
 );
 
