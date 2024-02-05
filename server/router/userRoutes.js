@@ -114,7 +114,7 @@ router.get(
   }),
   function (req, res) {
     // Xác thực thành công, chuyển hướng về trang chủ.
-    res.redirect(`/user?userID=` + req.user._id);
+    res.redirect(`/conversations?u_id=` + req.user._id);
   }
 );
 
@@ -155,7 +155,10 @@ router.post("/auth/login", (req, res) => {
         res.json({ message: err, sign: false });
         return;
       }
-      return res.send({ message: "/user?userID=" + user._id, sign: true });
+      return res.send({
+        message: "/conversations?u_id=" + user._id,
+        sign: true,
+      });
     });
   })(req, res);
 });
