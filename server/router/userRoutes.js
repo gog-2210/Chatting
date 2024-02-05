@@ -62,9 +62,6 @@ passport.use(
               // Xử lý lỗi khi lưu
               console.error("Lỗi khi lưu tài khoản:", err);
             });
-          // Thêm tài khoản vào danh sách tài khoản của người dùng
-          user.accounts.push(account._id);
-          await user.save();
         }
         done(null, user);
       } catch (err) {
@@ -111,11 +108,13 @@ router.get(
 router.get(
   "/auth/callback/google",
   passport.authenticate("google", {
-    failureRedirect: `/login`,
+    failureRedirect: `${process.env.CLIENT_URL}/login`,
   }),
   function (req, res) {
     // Xác thực thành công, chuyển hướng về trang chủ.
-    res.redirect(`/conversations?u_id=` + req.user._id);
+    res.redirect(
+      `${process.env.CLIENT_URL}/conversations?u_id=` + req.user._id
+    );
   }
 );
 

@@ -48,6 +48,6 @@ db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
   console.log("connected to mongodb");
   server.listen(PORT, () => {
-    console.log(`http://localhost:${PORT}`);
+    console.log(`Server is running`);
   });
 });
