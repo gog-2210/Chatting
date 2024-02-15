@@ -1,5 +1,5 @@
 import React from "react";
-import Forgot from "../components/forgot";
+import Forgot from "../../components/forgot";
 
 const ForgotPage = () => {
   return (

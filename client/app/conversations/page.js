@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Logout from "../components/logout";
+import Logout from "../../components/logout";
 import { useRouter } from "next/navigation";
 
 const ConversationsPage = () => {

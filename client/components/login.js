@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import "../styles/login.css";
+import "../app/styles/login.css";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import axios from "axios";
