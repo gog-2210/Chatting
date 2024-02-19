@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import axios from "axios";
+import { FiLogOut } from "react-icons/fi";
 
 export default function Logout() {
   const logout = async () => {
@@ -8,5 +9,9 @@ export default function Logout() {
       window.location.href = res.data;
     });
   };
-  return <button onClick={logout}>Logout</button>;
+  return (
+    <button onClick={logout}>
+      <FiLogOut />
+    </button>
+  );
 }
